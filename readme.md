@@ -1,5 +1,5 @@
 
-##A Course Search Feature with Different Document Representation Methods 
+## A Course Search Feature with Different Document Representation Methods 
 -- Weijie Jiang (Jenny), jiangwj@berkeley.edu
 
 This project tried to build a course search backend in the context of UC Berkeley with three traditional and modern document representation methods, including TF-IDF, BM25, and Sentence-BERT. The backend was implemented using Python3 and demonstrated in jupyter notebook. 
@@ -17,24 +17,24 @@ two files **course\_id.pkl** (dictionares for indexing courses) and **courseId\_
 2. Run python [tf-idf/data_preprocessing.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/data_preprocessing.py), two files **tfidf.npy** (TF-IDF course description matrix) and **word_dict.json** (dictionary for indexing words) will be generated in folder [tf-idf](https://github.com/fabulosa/Course_Search/tree/master/tf-idf).
 3. Run [sentence\_BERT/generate\_course\_embedding\_sentBert.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/generate_course_embedding_sentBert.py), a file **course\_embeddings\_sentBert.npy** (sentence-BERT course description matrix) will be generated.
 
-###Offline Evaluation:
+### Offline Evaluation:
 The offline evaluation is a task to predict the most similar course to a given course, you will see the scores of Recall@10 and Mean/Median Rank for each method when running the following commands.
 
 1. python [tf-idf/validation.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/validation.py)
 2. python [BM25/validation.py](https://github.com/fabulosa/Course_Search/blob/master/BM25/validation.py)
 3. python [sentence_BERT/validation.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/validation.py)
 
-###Online Course Search:
+### Online Course Search:
 Run each jupyter notebook below to experience the search feature hosted by each document representation method.
 
 * TF-IDF backend: [tf-idf/query\_search\_tfidf.ipynb](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/query_search_tfidf.ipynb)
 * BM25 backend: [BM25/query\_search\_BM25.ipynb](https://github.com/fabulosa/Course_Search/blob/master/BM25/query_search_BM25.ipynb)
 * Sentence_BERT backend: [sentence\_BERT/query\_search\_sentenceBert.ipynb](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/query_search_sentenceBert.ipynb)
 
-###Search Exemplars:
+### Search Exemplars:
 In order to examine the advantages and disadvantages of each method. Several representative examples are selected and analyzed in this section. The search result on the official website for class search at Berkeley https://classes.berkeley.edu/search/class/ were also compared with the methods implemented in this project.
 
-####Query 1: “how to manage money” 
+#### Query 1: “how to manage money” 
 This query is very colloquial, but a novice student might use it to search for courses related to finance and investment. The word “money” may be a synonym to some specialized words in course descriptions.     
 
 **TF-IDF:** The top 5 results turned out not related to finance largely due to the fact that “manage” appear too many times in the course descriptions which dominates the relevance score. 
@@ -55,7 +55,7 @@ This query is very colloquial, but a novice student might use it to search for c
 ![pic](pics/q1-website.png)
 
 
-####Query 2: “basic programming”
+#### Query 2: “basic programming”
 
 Students with non-technical majors may search for a course to learn basic programming. The stem of “programming” --“program” -- is also a homograph which has unrelated meanings, such as “an integrated course of academic studies” and “a sequence of instructions that a computer can interpret and execute”. “Basic” is also a homograph which could represent the meaning of “fundamental” and a high-level programming language “BASIC”.
 
@@ -76,7 +76,7 @@ Students with non-technical majors may search for a course to learn basic progra
 ![pic](pics/q2-website.png)
 
 
-####Query 3: “a data science course which has low requirement for math”
+#### Query 3: “a data science course which has low requirement for math”
 
 This is a longer query that includes two disciplines, data science and math, and the polarity of data science is positive while negative for math. The query might be searched by students without a strong math background but are interested in learning data science. 
 
