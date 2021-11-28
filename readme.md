@@ -1,6 +1,6 @@
 
 ## A Course Search Feature with Different Document Representation Methods 
--- Weijie Jiang (Jenny), jiangwj@berkeley.edu
+-- Weijie Jiang (Jenny), jiangwj[at]berkeley[dot]edu
 
 This project tried to build a course search backend in the context of UC Berkeley with three traditional and modern document representation methods, including TF-IDF, BM25, and Sentence-BERT. The backend was implemented using Python3 and demonstrated in jupyter notebook. 
 
