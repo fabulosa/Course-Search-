@@ -12,7 +12,7 @@ if __name__=='__main__':
     course_id = course_dict['course_id']
     id_course = course_dict['id_course']
     similarity = cosine_similarity(course2vec)
-    vali_set = pd.read_csv('vali_pairs.csv', header=0)
+    vali_set = pd.read_csv('../vali_pairs.csv', header=0)
     vali_set_split1 = vali_set['1'].str.split(' ')
     vali_set_split2 = vali_set['2'].str.split(' ')
     vali_set['course1'] = vali_set_split1.str[1:].apply(lambda x: ' '.join(x)) + ' ' + vali_set_split1.str[0]

@@ -30,7 +30,7 @@ def process_batch_data(batch_course, courseId_description_dict):
 
 def gene_course_embedding():
     training_data = list(range(len(course_id)))
-    train_loader = Data.DataLoader(dataset=training_data, batch_size=128, shuffle=False, num_workers=4,
+    train_loader = Data.DataLoader(dataset=training_data, batch_size=128, shuffle=False, num_workers=0,
                                    drop_last=False, collate_fn=lambda x: x)
     course_embeddings = []
     for _, batch_course in enumerate(train_loader):

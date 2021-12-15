@@ -5,24 +5,36 @@
 This project tried to build a course search backend in the context of UC Berkeley with three traditional and modern document representation methods, including TF-IDF, BM25, and Sentence-BERT. The backend was implemented using Python3 and demonstrated in jupyter notebook. 
 
 ### Install required packages:
+
+#### 1. Your python version should be 3.8, here are all the packages that are used in this project:
+
+* packages: pandas, sklearn, string, nltk, numpy, torch, transformers, sentence_transformers, IPython, rank\_bm25, jupyter
+
+* use **pip3 install [package name]** to install all of them
+
+
+#### 2. use anaconda virtual environment
 You can create a new anaconda virtual environment for running this project and install the requirement by running: 
 
-* conda create -n [name]
-* conda activate [name]
-* pip install -r requirements.txt
+* conda create -n course_search python=3.8
+* conda activate course_search
+
+You can either manually install all the required packages above (recommended) or go to the main directory Course\_Search and run:
+
+* conda env update --file environment.yml (might take long)
 
 ### Data Preprocessing:
-1. Go to the main directory and run: python [data\_preprocessing.py](https://github.com/fabulosa/Course_Search/blob/master/data_preprocessing.py), 
-two files **course\_id.pkl** (dictionares for indexing courses) and **courseId\_description.json** (dictionary that maps course ID to course description) will be generated. 
-2. Run python [tf-idf/data_preprocessing.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/data_preprocessing.py), two files **tfidf.npy** (TF-IDF course description matrix) and **word_dict.json** (dictionary for indexing words) will be generated in folder [tf-idf](https://github.com/fabulosa/Course_Search/tree/master/tf-idf).
-3. Run [sentence\_BERT/generate\_course\_embedding\_sentBert.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/generate_course_embedding_sentBert.py), a file **course\_embeddings\_sentBert.npy** (sentence-BERT course description matrix) will be generated.
+1. Go to the main directory **Course\_Search** and run: python [data\_preprocessing.py](https://github.com/fabulosa/Course_Search/blob/master/data_preprocessing.py), 
+two files **course\_id.pkl** (dictionares for indexing courses) and **courseId\_description.json** (a dictionary that maps course ID to course description) will be generated. 
+2. Go to folder **tf-idf** and run: python [data_preprocessing.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/data_preprocessing.py), two files **tfidf.npy** (TF-IDF course description matrix) and **word_dict.json** (dictionary for indexing words) will be generated in folder [tf-idf](https://github.com/fabulosa/Course_Search/tree/master/tf-idf).
+3. Go to folder **sentence_BERT** and run: python [generate\_course\_embedding\_sentBert.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/generate_course_embedding_sentBert.py), which will take couple minutes, then a file **course\_embeddings\_sentBert.npy** (sentence-BERT course description matrix) will be generated.
 
 ### Offline Evaluation:
 The offline evaluation is a task to predict the most similar course to a given course, you will see the scores of Recall@10 and Mean/Median Rank for each method when running the following commands.
 
-1. python [tf-idf/validation.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/validation.py)
-2. python [BM25/validation.py](https://github.com/fabulosa/Course_Search/blob/master/BM25/validation.py)
-3. python [sentence_BERT/validation.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/validation.py)
+1. Go to folder **tf-idf** and run: python [validation.py](https://github.com/fabulosa/Course_Search/blob/master/tf-idf/validation.py)
+2. Go to folder **BM25** and run: python [validation.py](https://github.com/fabulosa/Course_Search/blob/master/BM25/validation.py)
+3. Go to folder **sentence_BERT** and run: python [validation.py](https://github.com/fabulosa/Course_Search/blob/master/sentence_BERT/validation.py)
 
 ### Online Course Search:
 Run each jupyter notebook below to experience the search feature hosted by each document representation method.
