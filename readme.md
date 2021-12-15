@@ -4,9 +4,9 @@
 
 This project tried to build a course search backend in the context of UC Berkeley with three traditional and modern document representation methods, including TF-IDF, BM25, and Sentence-BERT. The backend was implemented using Python3 and demonstrated in jupyter notebook. 
 
-### Install required packages:
+### Install required packages (two options):
 
-#### 1. Your python version should be 3.8, here are all the packages that are used in this project:
+#### 1. Your python version has better to be 3.8, here are all the packages that are used in this project:
 
 * packages: pandas, sklearn, string, nltk, numpy, torch, transformers, sentence_transformers, IPython, rank\_bm25, jupyter
 
@@ -14,12 +14,12 @@ This project tried to build a course search backend in the context of UC Berkele
 
 
 #### 2. use anaconda virtual environment
-You can create a new anaconda virtual environment for running this project and install the requirement by running: 
+You can create a new anaconda virtual environment for running this project by running: 
 
 * conda create -n course_search python=3.8
 * conda activate course_search
 
-You can either manually install all the required packages above (recommended) or go to the main directory Course\_Search and run:
+Then you can either manually install all the required packages above (recommended) or go to the main directory Course\_Search and run:
 
 * conda env update --file environment.yml (might take long)
 
