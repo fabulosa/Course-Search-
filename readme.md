@@ -6,7 +6,7 @@ This project tried to build a course search backend in the context of UC Berkele
 
 ### Install required packages (two options):
 
-#### 1. Your python version has better to be 3.8, here are all the packages that are used in this project:
+#### 1. Your python version had better to be 3.8, here are all the packages that are used in this project:
 
 * packages: pandas, sklearn, string, nltk, numpy, torch, transformers, sentence_transformers, IPython, rank\_bm25, jupyter
 
@@ -19,7 +19,7 @@ You can create a new anaconda virtual environment for running this project by ru
 * conda create -n course_search python=3.8
 * conda activate course_search
 
-Then you can either manually install all the required packages above (recommended) or go to the main directory Course\_Search and run:
+Then you can either manually install all the required packages listed in 1 (recommended) or go to the main directory Course\_Search and run:
 
 * conda env update --file environment.yml (might take long)
 
